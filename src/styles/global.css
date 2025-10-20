@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@plugin "@midudev/tailwind-animations";
+
+@theme {
+  --color-primario: #BF9D6D;
+  --color-negro: #0D0D11;
+}
+
+:root {
+  --color-primario: #BF9D6D;
+  --color-negro: #0D0D11;
+}
+
+@font-face {
+  font-family: 'DegularDemo';
+  src: url('/fonts/DegularDemo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: 'DegularDemo', sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+}
