@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <!doctype html>
@@ -17,6 +18,7 @@ import Header from '../components/Header.astro';
 	<body>
 
 		<Header />
+		<Hero />
 
 		<slot />
 	</body>
@@ -24,6 +26,24 @@ import Header from '../components/Header.astro';
 </html>
 
 <style is:global>
+	html::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url('/pattern.png');
+		background-repeat: repeat;
+		opacity: 0.35;
+		pointer-events: none;
+		z-index: -1;
+	}
+	
+	html{
+		background-color: white;
+	}
+	
 	body {
 		margin: 0;
 		padding: 0;
