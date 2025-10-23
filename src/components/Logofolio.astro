@@ -6,24 +6,93 @@
 
         <div class="flex items-start gap-70 w-full">
 
-            <p class="text-negro text-4xl max-w-xl shrink-0">A lo largo de mi trayectoria, he desarrollado una amplia variedad de logotipos para diversos rubros, que van desde equipos de eSports y fútbol amateur hasta proyectos empresariales, cada uno con su propia impronta y propósito.</p>
+            <div class="text-negro text-4xl max-w-xl shrink-0">
+                <p id="descripcion">A lo largo de mi trayectoria, he desarrollado una amplia variedad de logotipos para diversos rubros, que van desde equipos de eSports y fútbol amateur hasta proyectos empresariales, cada uno con su propia impronta y propósito.</p>
+            </div>
 
-            <div class="grid grid-cols-3 gap-12 items-center grow p-8">
+            <div id="contenedor-logos" class="grid grid-cols-3 gap-12 items-center grow p-8">
                 
-                    <img src="/4x.svg" alt="4X Logo" class="w-32 h-32 object-contain"/>
-                    <img src="/ardillafc.svg" alt="Ardilla FC Logo" class="w-32 h-32 object-contain"/>
-                    <img src="/cottetcelulares.svg" alt="Cottet Celulares Logo" class="w-32 h-32 object-contain"/>
-                    <img src="/elefante.svg" alt="Elefante Logo" class="w-32 h-32 object-contain"/>
-                    <img src="/logochury.svg" alt="Logo BJM" class="w-32 h-32 object-contain"/>
-                    <img src="/formula4.svg" alt="Formula 4 Logo" class="w-32 h-32 object-contain"/>
-                    <img src="/hydro.svg" alt="Hydro Logo" class="w-32 h-32 object-contain"/>
-                    <img src="/liga-del-west.svg" alt="Liga del West Logo" class="w-32 h-32 object-contain"/>
-                    <img src="/vcorta.svg" alt="V Corta Logo" class="w-32 h-32 object-contain"/>
+                <img src="/4x.svg" alt="4X Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <img src="/ardillafc.svg" alt="Ardilla FC Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <img src="/cottetcelulares.svg" alt="Cottet Celulares Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <img src="/elefante.svg" alt="Elefante Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <img src="/logochury.svg" alt="Logo BJM" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <img src="/formula4.svg" alt="Formula 4 Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <img src="/hydro.svg" alt="Hydro Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <img src="/liga-del-west.svg" alt="Liga del West Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <img src="/vcorta.svg" alt="V Corta Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
 
             </div>            
         </div>
 
-
     </div>
 
 </section>
+
+<style>
+    .logo-item {
+        cursor: pointer;
+    }
+    
+    .logo-item:hover {
+        transform: scale(1.05);
+    }
+    
+    .logo-item.activo {
+        transform: scale(1.2);
+        position: relative;
+    }
+
+    #contenedor-logos.hover .logo-item:not(.activo) {
+        opacity: 0.3;
+    }
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const contenedorLogos = document.getElementById('contenedor-logos');
+        const descripcion = document.getElementById('descripcion');
+        const logoItems = document.querySelectorAll('.logo-item');
+        
+        const textoDefault = "A lo largo de mi trayectoria, he desarrollado una amplia variedad de logotipos para diversos rubros, que van desde equipos de eSports y fútbol amateur hasta proyectos empresariales, cada uno con su propia impronta y propósito.";
+        
+        let logoActivo: Element | null = null;
+        
+        logoItems.forEach((logo) => {
+            logo.addEventListener('click', () => {
+
+                if (logoActivo === logo) {
+
+                    if (contenedorLogos) {
+                        contenedorLogos.classList.remove('hover');
+                    }
+                    if (logoActivo) {
+                        logoActivo.classList.remove('activo');
+                    }
+                    if (descripcion) {
+                        descripcion.textContent = textoDefault;
+                    }
+                    logoActivo = null;
+                } else {
+
+                    if (logoActivo) {
+                        logoActivo.classList.remove('activo');
+                    }
+                    
+                    if (contenedorLogos) {
+                        contenedorLogos.classList.add('hover');
+                    }
+                    logo.classList.add('activo');
+                    
+                    const description = logo.getAttribute('data-description');
+                    if (descripcion && description) {
+                        descripcion.textContent = description;
+                    }
+
+                    logoActivo = logo;
+                }
+            });
+        });
+    });
+</script>
