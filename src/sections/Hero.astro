@@ -1,4 +1,4 @@
-<section id="inicio" class="h-[calc(100vh-112px)] flex items-center hero-pattern">
+<section id="inicio" class="h-[calc(100vh-112px)] flex items-center">
 
     <div class="flex flex-col items-start justify-center px-20 gap-8">
 
@@ -10,37 +10,12 @@
 
     <footer class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1">
 
-        <p class="text-white">Want to see some of my work?</p>
+        <p class="text-white">Want to know more about me?</p>
 
-        <a href="#trabajos">
+        <a href="#about-me">
             <img src="/arrow.svg" alt="Flecha mirando abajo" class="size-10 animate-bounce-pulse"/>  
         </a>
         
     </footer>
-    
 
 </section>
-
-<style>
-	.hero-pattern::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-image: url('/pattern2.png');
-		background-repeat: repeat;
-		opacity: 0.3;
-		pointer-events: none;
-		z-index: 1;
-	}
-	.hero-pattern {
-        background-color: var(--color-negro);
-		position: relative;
-	}
-	
-	.hero-pattern > * {
-		z-index: 2;
-	}
-</style>
