@@ -25,15 +25,19 @@
 }
 
 @font-face {
-  font-family: 'DegularDemo';
-  src: url('/fonts/DegularDemo.otf') format('opentype');
+  font-family: 'Degular';
+  src: url('/fonts/Degular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 html {
-  font-family: 'DegularDemo', sans-serif;
+  font-family: 'Degular', sans-serif;
   scroll-behavior: smooth;
   scroll-padding-top: 112px;
+}
+
+h1 {
+  letter-spacing: 6px;
 }
