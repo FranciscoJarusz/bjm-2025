@@ -1,0 +1,170 @@
+<section id="logofolio" class="h-[calc(100vh-112px)]">
+
+    <div class="flex flex-col items-start px-20 gap-20 h-full">
+
+        <h1 class="uppercase text-8xl font-bold italic text-left text-primario max-w-4xl leading-40">Logofolio</h1>
+
+        <div class="flex items-start gap-70 w-full">
+
+            <div class="text-negro max-w-xl shrink-0">
+
+                <h2 id="nombre-logo" class="text-6xl font-bold mb-4" style="display: none;"></h2>
+
+                <p id="descripcion" class="text-3xl mb-6">A lo largo de mi trayectoria, he desarrollado una amplia variedad de logotipos para diversos rubros, que van desde equipos de eSports y fútbol amateur hasta proyectos empresariales, cada uno con su propia impronta y propósito.</p>
+                
+                <p id="texto-adicional" class="text-md text-gray-600" style="display: none;"></p>
+
+            </div>
+
+            <div id="contenedor-logos" class="grid grid-cols-3 gap-12 items-center grow p-8">
+                
+                <img src="/4x.svg" alt="4X Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="4X Padel"
+                    data-description="Identidad desarrollada para una organización de torneos amateur de pádel. El 4 funciona como base estructural, reinterpretado con los perforados propios de una paleta que, al unirse, generan una X. El resultado es un símbolo que equilibra deporte, diseño y unidad."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+
+                <img src="/ardillafc.svg" alt="Ardilla FC Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="Ardilla FC"
+                    data-description="Logo creado para un equipo de fútbol amateur. La propuesta parte del apodo de uno de los integrantes, integrando la figura de una ardilla con elementos del fútbol y un guiño al teatro, combinando lo lúdico con lo representativo del grupo."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+
+                <img src="/cottetcelulares.svg" alt="Cottet Celulares Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="Cottet Celulares"
+                    data-description="Identidad para una empresa dedicada a la venta y reparación de teléfonos. El diseño se construye a partir de la letra C, dentro de la cual se integra la silueta de un celular, logrando una marca simple, directa y funcional para distintos soportes."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+
+                <img src="/colossus.svg" alt="Colossus eSports Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="Colossus eSports"
+                    data-description="Proyecto realizado en colaboración con un colega. Se buscó un estilo esports clásico, con un enfoque minimalista y elegante. La figura del elefante transmite presencia, fuerza y carácter, cualidades que representan la identidad competitiva del equipo."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+
+                <img src="/logochury.svg" alt="Logo BJM" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="BJM Design"
+                    data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+
+                <img src="/formula4.svg" alt="Formula 4 Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="Formula 4"
+                    data-description="Logo diseñado para una empresa de computación. Su estructura parte de la forma geométrica de las teclas, reinterpretando la sigla F4 mediante planos y ángulos que sugieren tecnología, precisión y modernidad."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+                     
+                <img src="/hydro.svg" alt="Hydro Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="Hydro"
+                    data-description="Identidad desarrollada bajo una estética Y2K, con tipografía personalizada y trazos envolventes. El uso de formas curvas, brillos y contornos profundos busca transmitir una sensación tecnológica y dinámica, fiel al estilo retrofuturista de comienzos de los 2000."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+
+                <img src="/liga-del-west.svg" alt="Liga del West Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="Liga del West"
+                    data-description="Diseño tipográfico creado para una liga de carreras en simuladores del oeste bonaerense. Se combinan dos estilos de letras para unir la modernidad digital con la estética urbana y callejera, generando una marca con personalidad y ritmo."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+
+                <img src="/voltek.svg" alt="Voltek Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
+                    data-name="Voltek"
+                    data-description="Logo diseñado para una empresa de venta de teléfonos y accesorios. Se propuso una identidad simple y versátil, con formas angulares y limpias que reflejan tecnología, velocidad y adaptabilidad, pensada para funcionar en múltiples aplicaciones."
+                    data-additional="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                />
+
+            </div>   
+                     
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    .logo-item {
+        cursor: pointer;
+    }
+    
+    .logo-item:hover {
+        transform: scale(1.05);
+    }
+    
+    .logo-item.activo {
+        transform: scale(1.2);
+        position: relative;
+    }
+
+    #contenedor-logos.hover .logo-item:not(.activo) {
+        opacity: 0.3;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const contenedorLogos = document.getElementById('contenedor-logos');
+        const nombreLogo = document.getElementById('nombre-logo');
+        const descripcion = document.getElementById('descripcion');
+        const textoAdicional = document.getElementById('texto-adicional');
+        const logoItems = document.querySelectorAll('.logo-item');
+        
+        const textoDefault = "A lo largo de mi trayectoria, he desarrollado una amplia variedad de logotipos para diversos rubros, que van desde equipos de eSports y fútbol amateur hasta proyectos empresariales, cada uno con su propia impronta y propósito.";
+        
+        let logoActivo: Element | null = null;
+        
+        logoItems.forEach((logo) => {
+            logo.addEventListener('click', () => {
+
+                if (logoActivo === logo) {
+
+                    if (contenedorLogos) {
+                        contenedorLogos.classList.remove('hover');
+                    }
+                    if (logoActivo) {
+                        logoActivo.classList.remove('activo');
+                    }
+                    if (nombreLogo) {
+                        nombreLogo.style.display = 'none';
+                    }
+                    if (descripcion) {
+                        descripcion.textContent = textoDefault;
+                    }
+                    if (textoAdicional) {
+                        textoAdicional.style.display = 'none';
+                    }
+                    logoActivo = null;
+
+                } else {
+
+                    if (logoActivo) {
+                        logoActivo.classList.remove('activo');
+                    }
+                    
+                    if (contenedorLogos) {
+                        contenedorLogos.classList.add('hover');
+                    }
+                    logo.classList.add('activo');
+                    
+                    const name = logo.getAttribute('data-name');
+                    const description = logo.getAttribute('data-description');
+                    const additional = logo.getAttribute('data-additional');
+                    
+                    if (nombreLogo && name) {
+                        nombreLogo.textContent = name;
+                        nombreLogo.style.display = 'block';
+                    }
+                    
+                    if (descripcion && description) {
+                        descripcion.textContent = description;
+                    }
+                    
+                    if (textoAdicional && additional) {
+                        textoAdicional.textContent = additional;
+                        textoAdicional.style.display = 'block';
+                    }
+
+                    logoActivo = logo;
+                }
+            });
+        });
+    });
+</script>
