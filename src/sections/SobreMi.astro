@@ -1,0 +1,114 @@
+<section id="sobre-mi" class="h-[calc(100vh-112px)]">
+
+    <div class="flex flex-col items-start justify-center px-20 h-full">
+
+        <div class="flex flex-col items-start">
+            
+            <div class="flex items-start gap-20">
+
+                <img src="/fotochury.jpg" alt="" class="object-cover object-center w-90 h-85 rounded-lg" />
+
+                <div class="flex flex-col items-start max-w-4xl">
+
+                    <h1 class="uppercase text-[90px] font-bold italic text-left text-primario -mt-8">Sobre BJM Designs</h1>
+
+                    <p class="mt-5 text-xl text-balance text-white max-w-4xl">
+                        Soy un diseñador gráfico freelance de Buenos Aires, Argentina. 
+                        A lo largo de mi carrera he trabajado con diversos
+                        clientes, creando soluciones visuales que ayudan a transmitir su
+                        identidad y mensaje de manera efectiva.
+                        Mi estilo se caracteriza por un equilibrio entre
+                        lo formal y lo creativo, buscando siempre que el diseño no solo
+                        cumpla su función, sino que también sea atractivo y único.
+                    </p>
+                    
+                    <div class="flex gap-8 mt-13">
+
+                        <a href="https://www.instagram.com/bjm.dg" target="_blank" rel="noopener noreferrer" class="text-xl font-bold px-6 py-3 rounded-lg text-negro hover-degrade transition-all duration-300">
+                            Contactame
+                        </a>
+
+
+                        <a href="#proyectos" class="text-xl font-bold px-6 py-3 rounded-lg text-negro hover-degrade transition-all duration-300">
+                            Proyectos
+                        </a>     
+
+                    </div>
+
+                </div>       
+                         
+            </div>
+
+
+            <div class="grid grid-cols-6 grid-rows-4 gap-4 w-[95%] h-50 mt-8">
+
+                <div class="col-span-2 row-span-4 bg-negro border border-primario rounded-lg flex items-center justify-center text-white">
+                        
+                    <div class="text-center">
+                        <h2 class="font-bold text-6xl">+5 años</h2>
+                        <p class="text-lg">De experiencia</p>
+                    </div>
+
+                    </div>
+                    
+                    <div class="col-span-2 row-span-2 col-start-3 row-start-3 bg-negro border border-primario rounded-lg flex items-center justify-center text-white">
+                        
+                    <div class="text-center">
+                        <h2 class="font-bold text-4xl">+30</h2>
+                        <p class="text-md">Identidades</p>
+                    </div>
+
+                </div>
+                    
+                <div class="col-span-2 row-span-4 col-start-5 row-start-1 bg-negro border border-primario rounded-lg flex items-center justify-center text-white">
+                    
+                    <div class="text-center">
+                        <h2 class="font-bold text-6xl">+150</h2>
+                        <p class="text-lg">Proyectos</p>
+                    </div>
+
+                </div>
+                    
+                <div class="col-span-2 row-span-2 col-start-3 row-start-1 bg-negro border border-primario rounded-lg flex items-center justify-center text-white">
+
+                    <div class="text-center">
+                        <h2 class="font-bold text-4xl">+15</h2>
+                        <p class="text-md">Marcas</p>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    .hover-degrade {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--color-primario);
+    z-index: 1;
+    }
+
+    .hover-degrade::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--color-primario) 0%, #D4B88A 100%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: inherit;
+    z-index: -1;
+    }
+
+    .hover-degrade:hover::before {
+    opacity: 1;
+    }
+</style>
