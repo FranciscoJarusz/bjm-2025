@@ -1,13 +1,13 @@
-<header class="w-full sticky top-0 z-10">
+<header class="section w-full fixed top-0 z-10" data-header-color="negro" id="header">
 
-    <div class="bg-negro py-6 px-20 flex gap-6 items-center justify-between w-full">
+    <div class="py-6 px-20 flex gap-6 items-center justify-between w-full">
 
         <a href="/">
             <img src="/logo-bjm.png" alt="Logo BJM" class="w-22 h-16 hover:scale-105 transition-all duration-300">
         </a>
 
         <nav>
-            <ul class="flex gap-20 text-white text-xl">
+            <ul class="flex gap-20 [&>li>a]:text-current [&>li>a]:text-xl">
                 <li><a href="#inicio" class="hover:text-primario transition-all duration-300">Inicio</a></li>
                 <li><a href="#sobre-mi" class="hover:text-primario transition-all duration-300">Sobre mi</a></li>
                 <li><a href="#logofolio" class="hover:text-primario transition-all duration-300">Logofolio</a></li>
@@ -18,3 +18,37 @@
     </div>
 
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const $header = document.querySelector('header') as HTMLElement;
+
+        if (!$header) return;
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const color = entry.target.getAttribute('data-header-color');
+                    
+                    console.log('Cambiando color del header a:', color);
+                    
+                    if (color) {
+                        $header.style.setProperty('color', `var(--color-${color})`, 'important');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        const sections = document.querySelectorAll('section[data-header-color]');
+
+        sections.forEach($section => {
+            observer.observe($section);
+        });
+    });
+</script>

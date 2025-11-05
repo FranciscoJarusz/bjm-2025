@@ -1,6 +1,6 @@
-<section id="sobre-mi" class="h-[calc(100vh-112px)]">
+<section id="sobre-mi" class="section h-full">
 
-    <div class="flex flex-col items-start justify-center px-20 h-full">
+    <div class="flex flex-col items-start justify-center px-20 h-full pt-28">
 
         <div class="flex flex-col items-start">
             
@@ -93,27 +93,59 @@
 
 <style>
     .hover-degrade {
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: var(--color-primario);
-    z-index: 1;
+        position: relative;
+        background: var(--color-primario);
+        color: var(--color-negro) !important;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        z-index: 1;
     }
 
-    .hover-degrade::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--color-primario) 0%, #D4B88A 100%);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: inherit;
-    z-index: -1;
+    .hover-degrade * {
+        position: relative;
+        z-index: 3;
     }
 
-    .hover-degrade:hover::before {
-    opacity: 1;
+    .hover-degrade::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, transparent 0%, #D4B88A 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+        z-index: 2;
     }
+
+    .hover-degrade:hover {
+        transform: translateY(-2px);
+    }
+
+    .hover-degrade:hover::after {
+        opacity: 0.6;
+    }
+</style>
+
+<style is:global>
+	html::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url('/pattern.png');
+		background-repeat: repeat;
+		pointer-events: none;
+		z-index: -1;
+	}
+	
+	body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
 </style>

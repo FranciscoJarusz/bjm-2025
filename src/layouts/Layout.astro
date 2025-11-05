@@ -1,10 +1,5 @@
 ---
 import '@/styles/global.css';
-import Header from '@/components/Header.astro';
-import Hero from '@/sections/Hero.astro';
-import SobreMi from '@/sections/SobreMi.astro';
-import LogoFolio from '@/sections/Logofolio.astro';
-import Footer from '@/components/Footer.astro';
 ---
 
 <!doctype html>
@@ -19,40 +14,7 @@ import Footer from '@/components/Footer.astro';
 	</head>
 
 	<body>
-
-		<Header />
-		<Hero />
-		<SobreMi />
-		<LogoFolio />
-
 		<slot />
-
 	</body>
 
 </html>
-
-<style is:global>
-	html::before {
-		content: '';
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-image: url('/pattern2.png');
-		background-repeat: repeat;
-		opacity: 0.2;
-		pointer-events: none;
-		z-index: -1;
-	}
-	
-	html{
-		background-color: var(--color-negro);
-	}
-	
-	body {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-</style>

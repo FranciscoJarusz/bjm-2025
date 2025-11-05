@@ -1,6 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Hero from '@/sections/Hero.astro';
+import SobreMi from '@/sections/SobreMi.astro';
+import LogoFolio from '@/sections/Logofolio.astro';
+import Footer from '@/components/Footer.astro';
 ---
 
 <Layout>
+
+    <Header />    
+    
+    <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth">
+
+		<section class="snap-center h-screen section" data-header-color="negro">
+			<Hero />
+		</section>
+
+		<section class="snap-center h-screen section" data-header-color="white">
+			<SobreMi />
+		</section>
+
+    </main>
+
 </Layout>
