@@ -5,8 +5,6 @@
 @theme {
   --color-primario: #BF9D6D;
   --color-negro: #0D0D11;
-  --color-accent-from: #BF9D6D;
-  --color-accent-to: #D4B88A;
 
   --animate-bounce-pulse: bounce-pulse 2s ease-in-out infinite;
 }
