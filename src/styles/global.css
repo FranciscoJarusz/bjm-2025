@@ -5,9 +5,12 @@
 @theme {
   --color-primario: #BF9D6D;
   --color-negro: #0D0D11;
+  --color-accent-from: #BF9D6D;
+  --color-accent-to: #D4B88A;
 
   --animate-bounce-pulse: bounce-pulse 2s ease-in-out infinite;
 }
+
 
 @keyframes bounce-pulse {
   0% {
@@ -40,4 +43,12 @@ html {
 
 h1 {
   letter-spacing: 6px;
+}
+
+h2 {
+  letter-spacing: 4px;
+}
+
+p {
+  letter-spacing: 0.8px;
 }
