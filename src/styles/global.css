@@ -35,8 +35,7 @@
 
 html {
   font-family: 'Degular', sans-serif;
-  scroll-behavior: smooth;
-  scroll-padding-top: 112px;
+    scroll-padding-top: 112px;
 }
 
 h1 {
