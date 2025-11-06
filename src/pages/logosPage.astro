@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '@/components/Header.astro';
 import Logofolio from '@/sections/Logofolio.astro';
 ---
 
@@ -9,11 +8,9 @@ import Logofolio from '@/sections/Logofolio.astro';
 	description="Explora mi logofolio, una colección de identidades visuales y diseños de logotipos que reflejan la esencia de diversas marcas. Cada proyecto destaca mi enfoque creativo y atención al detalle en el diseño gráfico."
 >
 
-    <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth">
+    <main>
 
-        <section class="snap-center h-screen section" data-header-color="negro">
-            <Logofolio />
-        </section>
+        <Logofolio />
 
     </main>
 
