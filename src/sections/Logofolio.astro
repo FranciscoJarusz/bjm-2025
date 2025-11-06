@@ -1,6 +1,6 @@
 <section id="logofolio" class="h-screen hero-pattern">
 
-    <div class="flex flex-col items-start px-20 gap-20 h-full">
+    <div class="flex flex-col items-start px-20 gap-20 pt-28 h-full">
 
         <h1 class="uppercase text-8xl font-bold italic text-left text-primario max-w-4xl leading-40">Logofolio</h1>
 
@@ -98,25 +98,30 @@
         opacity: 0.3;
     }
 
+	.hero-pattern {
+		position: relative;
+		overflow: hidden;
+	}
+
 	.hero-pattern::before {
 		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
+		right: 0;
+		bottom: 0;
 		width: 100%;
 		height: 100%;
-		background-image: url('/pattern.png');
+		background-image: url('/pattern2.png');
 		background-repeat: repeat;
-		opacity: 0.2;
+		background-size: auto;
+		background-position: 0 0;
 		pointer-events: none;
 		z-index: 1;
 	}
-	.hero-pattern {
-        background-color: white;
-		position: relative;
-	}
 	
 	.hero-pattern > * {
+		position: relative;
 		z-index: 2;
 	}
 </style>

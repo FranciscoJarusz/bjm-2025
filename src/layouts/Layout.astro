@@ -1,5 +1,15 @@
 ---
 import '@/styles/global.css';
+
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "BJM - Portfolio", 
+	description = "Diseñador gráfico freelance de Buenos Aires, Argentina. Especializado en identidad visual, logofolio y soluciones creativas que comunican de manera efectiva." 
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -10,7 +20,20 @@ import '@/styles/global.css';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>BJM - Portfolio</title>
+		
+		<meta name="description" content={description} />
+		<meta name="author" content="BJM Design" />
+		<meta name="keywords" content="diseño gráfico, logofolio, identidad visual, freelance, Buenos Aires, Argentina" />
+		
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		
+		<title>{title}</title>
 	</head>
 
 	<body>
