@@ -46,6 +46,19 @@ h2 {
   letter-spacing: 4px;
 }
 
+h3 {
+  letter-spacing: 2px;
+}
+
 p {
   letter-spacing: 0.8px;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-primario) transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
