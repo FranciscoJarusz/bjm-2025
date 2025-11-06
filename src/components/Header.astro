@@ -10,7 +10,7 @@
             <ul class="flex gap-20 [&>li>a]:text-current [&>li>a]:text-xl">
                 <li><a href="#inicio" class="hover:text-primario transition-all duration-300">Inicio</a></li>
                 <li><a href="#sobre-mi" class="hover:text-primario transition-all duration-300">Sobre mi</a></li>
-                <li><a href="#logofolio" class="hover:text-primario transition-all duration-300">Logofolio</a></li>
+                <li><a href="#proyectos" class="hover:text-primario transition-all duration-300">Proyectos</a></li>
                 <li><a href="/" class="hover:text-primario transition-all duration-300">Contacto</a></li>
             </ul>
         </nav>  
@@ -23,20 +23,16 @@
     document.addEventListener('DOMContentLoaded', () => {
         const $header = document.querySelector('header') as HTMLElement;
 
-        if (!$header) return;
-
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.3
+            threshold: 0.9
         };
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const color = entry.target.getAttribute('data-header-color');
-                    
-                    console.log('Cambiando color del header a:', color);
                     
                     if (color) {
                         $header.style.setProperty('color', `var(--color-${color})`, 'important');
