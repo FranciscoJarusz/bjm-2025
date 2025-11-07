@@ -1,22 +1,29 @@
 <section id="logofolio" class="h-screen hero-pattern">
 
-    <div class="flex flex-col items-start px-20 gap-20 pt-28 h-full">
+    <div class="flex flex-col justify-center px-20 pt-28 h-full">
+        
+        <div class="flex gap-140 justify-center w-full">
 
-        <h1 class="uppercase text-8xl font-bold italic text-left text-primario max-w-4xl leading-40">Logofolio</h1>
+            <div class="text-negro max-w-xl shrink-0 flex flex-col justify-between h-full">
 
-        <div class="flex items-start gap-70 w-full">
+                <div>
+                    <h2 id="nombre-logo" class="text-6xl font-bold mb-4" style="display: none;"></h2>
 
-            <div class="text-negro max-w-xl shrink-0">
+                    <p id="descripcion" class="text-3xl mb-6">A lo largo de mi trayectoria, he desarrollado una amplia variedad de logotipos para diversos rubros, que van desde equipos de eSports y fútbol amateur hasta proyectos empresariales, cada uno con su propia impronta y propósito.</p>
+                    
+                    <p id="texto-adicional" class="text-2xl text-gray-600" style="display: none;"></p>
+                </div>
 
-                <h2 id="nombre-logo" class="text-6xl font-bold mb-4" style="display: none;"></h2>
-
-                <p id="descripcion" class="text-3xl mb-6">A lo largo de mi trayectoria, he desarrollado una amplia variedad de logotipos para diversos rubros, que van desde equipos de eSports y fútbol amateur hasta proyectos empresariales, cada uno con su propia impronta y propósito.</p>
+                <a href="/index.html" class="justify-between text-xl font-bold px-6 py-3 rounded-xl text-negro hover-degrade transition-all duration-300 flex items-center gap-5 group w-40">
+                    <span class="text-negro">Inicio</span>
+                    <svg class="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>        
                 
-                <p id="texto-adicional" class="text-2xl text-gray-600" style="display: none;"></p>
-
             </div>
 
-            <div id="contenedor-logos" class="grid grid-cols-3 gap-12 items-center grow p-8">
+            <div id="contenedor-logos" class="grid grid-cols-3 items-center justify-between gap-8 grow">
                 
                 <img src="/4x.svg" alt="4X Logo" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
                     data-name="4X Padel"
@@ -44,7 +51,7 @@
 
                 <img src="/logochury.svg" alt="Logo BJM" class="logo-item w-32 h-32 object-contain transition-all duration-300" 
                     data-name="BJM Design"
-                    data-description="Una marca que refleja carácter, técnica y estilo propio. El monograma combina las iniciales BJM en una estructura sólida y moderna, con contrastes marcados y un trazo envolvente que transmite presencia y movimiento. Un símbolo que resume el enfoque como diseñador: claridad visual, precisión y una identidad coherente en cada detalle."
+                    data-description="Una marca que refleja carácter, técnica y estilo propio. El monograma combina las iniciales BJM en una estructura sólida y moderna, con contrastes marcados y un trazo envolvente que transmite presencia y movimiento."
                     data-additional="Diseño Gráfico"
                 />
 
@@ -73,9 +80,9 @@
                 />
 
             </div>   
-                     
-        </div>
 
+        </div>    
+          
     </div>
 
 </section>

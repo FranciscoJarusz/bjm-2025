@@ -56,7 +56,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                             
-                        <a href="/logosPage" target="_blank" class="w-10 h-10 rounded-xl text-negro hover-degrade transition-all duration-300 flex items-center justify-center flex-shrink-0">
+                        <a href="/logosPage" class="w-10 h-10 rounded-xl text-negro hover-degrade transition-all duration-300 flex items-center justify-center flex-shrink-0">
                             <svg class="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                 </svg>
@@ -126,40 +126,4 @@
 		position: relative;
 		z-index: 2;
 	}
-
-    .hover-degrade {
-        position: relative;
-        background: var(--color-primario);
-        color: var(--color-negro) !important;
-        transition: transform 0.3s ease-in-out;
-        overflow: hidden;
-        z-index: 1;
-    }
-
-    .hover-degrade * {
-        position: relative;
-        z-index: 3;
-    }
-
-    .hover-degrade::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, transparent 0%, #D4B88A 100%);
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-        pointer-events: none;
-        z-index: 2;
-    }
-
-    .hover-degrade:hover {
-        transform: translateY(-2px);
-    }
-
-    .hover-degrade:hover::after {
-        opacity: 0.6;
-    }
 </style>
