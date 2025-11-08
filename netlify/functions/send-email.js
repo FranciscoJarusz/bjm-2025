@@ -114,7 +114,7 @@ exports.handler = async (event, context) => {
           <div style="text-align: center; margin-top: 20px; padding: 20px;">
             <p style="color: #888888; font-size: 14px; margin: 0;">
               Este mensaje fue enviado desde tu portfolio web<br>
-              <strong>BJM Design</strong> - Diseño Gráfico Profesional
+              <strong>BJM Designs</strong>
             </p>
             <div style="margin-top: 15px;">
               <span style="color: #cccccc; font-size: 12px;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
