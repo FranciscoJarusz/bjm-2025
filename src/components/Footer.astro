@@ -1,10 +1,174 @@
-<footer>
+<section id="contacto" class="h-screen flex flex-col items-center justify-center gap-20 pt-28">
 
-    <div class="bg-negro py-6 px-20 flex gap-6 items-center justify-center">
+    <h2 class="text-4xl text-white font-bold">Contacto</h2>
 
-        <p class="text-white text-center">© 2025 BJM</p>
-        <p class="text-white text-center">bjmdesignsok@gmail.com</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 max-w-6xl w-full">
 
+        <div class="flex flex-col space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold text-primario mb-4">¡Hablemos de tu proyecto!</h3>
+                <p class="text-white text-lg mb-6 text-balance">
+                    Si tenés una idea o necesitás ayuda con tu sitio web, no dudes en escribirme. 
+                    Estoy acá para escucharte y ayudarte a llevar tu proyecto al siguiente nivel.
+                </p>
+            </div>
+            
+        </div>
+
+        <div class="bg-negro/50 border border-primario/30 rounded-2xl p-8">
+            <!-- Mensaje de éxito (oculto por defecto) -->
+            <div id="success-message" class="hidden bg-green-500/20 border border-green-500/50 rounded-lg p-4 mb-6">
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <p class="text-green-400 font-semibold">¡Mensaje enviado con éxito!</p>
+                </div>
+                <p class="text-green-300 text-sm mt-2">Te responderé lo antes posible. ¡Gracias por contactarme!</p>
+            </div>
+
+            <!-- Mensaje de error (oculto por defecto) -->
+            <div id="error-message" class="hidden bg-red-500/20 border border-red-500/50 rounded-lg p-4 mb-6">
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                    <p class="text-red-400 font-semibold">Error al enviar el mensaje</p>
+                </div>
+                <p class="text-red-300 text-sm mt-2" id="error-text">Por favor, intentá nuevamente o contactame directamente.</p>
+            </div>
+
+            <form id="contact-form" class="flex flex-col gap-6">
+                <div>
+                    <label for="nombre" class="block text-white font-semibold mb-2">Nombre</label>
+                    <input 
+                        type="text" 
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Tu nombre completo" 
+                        required
+                        class="w-full bg-negro border border-primario/20 rounded-lg px-4 py-3 text-white focus:border-primario focus:outline-none transition-colors duration-300" 
+                    />
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-white font-semibold mb-2">Email</label>
+                    <input 
+                        type="email" 
+                        id="email"
+                        name="email"
+                        placeholder="tu@email.com" 
+                        required
+                        class="w-full bg-negro border border-primario/20 rounded-lg px-4 py-3 text-white focus:border-primario focus:outline-none transition-colors duration-300" 
+                    />
+                </div>
+                
+                <div>
+                    <label for="mensaje" class="block text-white font-semibold mb-2">Mensaje</label>
+                    <textarea 
+                        id="mensaje"
+                        name="mensaje"
+                        placeholder="Contame tu proyecto..." 
+                        rows="5"
+                        required
+                        class="w-full bg-negro border border-primario/20 rounded-lg px-4 py-3 text-white resize-none focus:border-primario focus:outline-none transition-colors duration-300"
+                    ></textarea>
+                </div>
+                
+                <button type="submit" id="submit-btn" class="w-40 bg-primario text-negro rounded-full p-3 font-bold hover-degrade flex items-center justify-center gap-2 cursor-pointer">
+                    <span id="btn-text" class="text-sm">Enviar mensaje</span>
+                    <div id="loading-spinner" class="hidden">
+                        <svg class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </div>
+                </button>
+            </form>
+        </div>
     </div>
+</section>
 
-</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+        const errorText = document.getElementById('error-text');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Mostrar estado de carga
+            showLoading();
+            hideMessages();
+
+            try {
+                // Obtener datos del formulario
+                const formData = new FormData(form);
+                const data = {
+                    nombre: formData.get('nombre'),
+                    email: formData.get('email'),
+                    mensaje: formData.get('mensaje')
+                };
+
+                // Enviar a la API
+                const response = await fetch('/.netlify/functions/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showSuccess();
+                    form.reset();
+                } else {
+                    showError(result.message || 'Error al enviar el mensaje');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showError('Error de conexión. Por favor, intentá nuevamente.');
+            } finally {
+                hideLoading();
+            }
+        });
+
+        function showLoading() {
+            btnText.textContent = 'Enviando...';
+            loadingSpinner.classList.remove('hidden');
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+        }
+
+        function hideLoading() {
+            btnText.textContent = 'Enviar mensaje';
+            loadingSpinner.classList.add('hidden');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+        }
+
+        function showSuccess() {
+            successMessage.classList.remove('hidden');
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function showError(message) {
+            errorText.textContent = message;
+            errorMessage.classList.remove('hidden');
+            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function hideMessages() {
+            successMessage.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+        }
+    });
+</script>
