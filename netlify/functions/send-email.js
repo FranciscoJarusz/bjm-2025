@@ -72,8 +72,8 @@ exports.handler = async (event, context) => {
 
     // Enviar email usando Resend
     const { data, error } = await resend.emails.send({
-      from: 'BJM Portfolio <onboarding@resend.dev>',
-      to: [process.env.CONTACT_EMAIL || 'bjmdesignsok@gmail.com'],
+      from: 'BJM Portfolio <noreply@bjmdesigns.com>',
+      to: [process.env.CONTACT_EMAIL || 'bjmdesignsok@gmail.com'], // Usa variable de entorno
       subject: `Nuevo mensaje de ${nombre} desde tu portfolio`,
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
