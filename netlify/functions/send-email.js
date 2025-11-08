@@ -72,7 +72,7 @@ exports.handler = async (event, context) => {
 
     // Enviar email usando Resend
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio <noreply@bjmdesigns.com>',
+      from: 'BJM Portfolio <onboarding@resend.dev>',
       to: [process.env.CONTACT_EMAIL || 'bjmdesignsok@gmail.com'],
       subject: `Nuevo mensaje de ${nombre} desde tu portfolio`,
       html: `
