@@ -3,6 +3,23 @@ const { Resend } = require('resend');
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 exports.handler = async (event, context) => {
+  // Verificar que existe la API key de Resend
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY no está configurada');
+    return {
+      statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS'
+      },
+      body: JSON.stringify({ 
+        success: false, 
+        message: 'Configuración del servidor incompleta' 
+      })
+    };
+  }
+
   // Solo permitir POST
   if (event.httpMethod !== 'POST') {
     return {
@@ -80,13 +97,13 @@ exports.handler = async (event, context) => {
             <div style="margin-bottom: 25px;">
               <h3 style="color: #333333; margin: 0 0 15px 0; font-size: 16px;">💬 Mensaje:</h3>
               <div style="background-color: #ffffff; padding: 20px; border: 2px solid #e9ecef; border-radius: 8px; line-height: 1.6; color: #333333;">
-                ${message.replace(/\n/g, '<br>')}
+                ${mensaje.replace(/\n/g, '<br>')}
               </div>
             </div>
             
             <!-- CTA Button -->
             <div style="text-align: center; margin: 30px 0;">
-              <a href="mailto:${email}?subject=Re: ${encodeURIComponent(subject || 'Consulta desde BJM Portfolio')}" 
+              <a href="mailto:${email}?subject=Re: Consulta desde BJM Portfolio" 
                  style="background: linear-gradient(135deg, #000000 0%, #333333 100%); color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">
                 📩 Responder Email
               </a>
