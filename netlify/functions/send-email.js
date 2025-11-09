@@ -79,10 +79,11 @@ exports.handler = async (event, context) => {
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #BF9D6D 0%, #D4B88A 100%); padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
-            <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">
-              📧 Nuevo Mensaje - BJM Portfolio
+            <h1 style="color: #ffffff; margin: 0; font-size: 16px; font-weight: 600;">
+              Nuevo Mensaje - BJM Portfolio
             </h1>
           </div>
+
           
           <!-- Content -->
           <div style="padding: 30px; background-color: #ffffff; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -105,13 +106,13 @@ exports.handler = async (event, context) => {
             <div style="text-align: center; margin: 30px 0;">
               <a href="mailto:${email}?subject=Re: Consulta desde BJM Portfolio" 
                 style="background: linear-gradient(135deg, #BF9D6D 0%, #D4B88A 100%); color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">
-                📩 Responder Email
+                Responder Email
               </a>
             </div>
           </div>
           
           <!-- Footer -->
-          <div style="text-align: center; margin-top: 10px; padding: 20px;">
+          <div style="text-align: center;">
             <p style="color: #888888; font-size: 14px; margin: 0;">
               Este mensaje fue enviado desde tu portfolio web<br>
               <strong>BJM Designs</strong>
