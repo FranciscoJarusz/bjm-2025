@@ -1,4 +1,4 @@
-<header class="section w-full fixed top-0 z-10" data-header-color="negro" id="header">
+<header class="section w-full fixed top-0 z-10" id="header">
 
     <div class="py-6 px-20 flex gap-6 items-center justify-between w-full">
 
@@ -7,44 +7,14 @@
         </a>
 
         <nav>
-            <ul class="flex gap-20 [&>li>a]:text-current [&>li>a]:text-xl">
+            <ul class="flex gap-20 [&>li>a]:text-white [&>li>a]:text-xl">
                 <li><a href="#inicio" class="hover:text-primario transition-all duration-300">Inicio</a></li>
                 <li><a href="#sobre-mi" class="hover:text-primario transition-all duration-300">Sobre mi</a></li>
                 <li><a href="#proyectos" class="hover:text-primario transition-all duration-300">Proyectos</a></li>
-                <li><a href="/" class="hover:text-primario transition-all duration-300">Contacto</a></li>
+                <li><a href="#contacto" class="hover:text-primario transition-all duration-300">Contacto</a></li>
             </ul>
         </nav>  
 
     </div>
 
 </header>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const $header = document.querySelector('header') as HTMLElement;
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.9
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const color = entry.target.getAttribute('data-header-color');
-                    
-                    if (color) {
-                        $header.style.setProperty('color', `var(--color-${color})`, 'important');
-                    }
-                }
-            });
-        }, observerOptions);
-
-        const sections = document.querySelectorAll('section[data-header-color]');
-
-        sections.forEach($section => {
-            observer.observe($section);
-        });
-    });
-</script>

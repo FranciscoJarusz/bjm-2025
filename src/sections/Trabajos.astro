@@ -1,4 +1,4 @@
-<section id="proyectos" class="section h-full flex hero-pattern">
+<section id="proyectos" class="section h-full flex">
 
     <div class="flex flex-col items-start justify-center px-20 h-full w-full pt-28 gap-8">
 
@@ -6,23 +6,23 @@
 
             <h1 class="uppercase text-[120px] font-bold italic text-left text-primario">Mis proyectos</h1>
 
-            <p class="text-negro text-xl max-w-2xl">
+            <p class="text-white text-xl max-w-2xl">
                 Me gusta pensar cada proyecto como una oportunidad para contar algo distinto. 
                 Desde el diseño de una marca hasta la creación de contenido, mi objetivo siempre es el mismo: lograr algo que se vea bien y comunique mejor.
             </p>
 
         </div>
 
-        <div class="flex gap-50 mt-12 mb-12">
+        <div class="flex w-full justify-between mt-12 mb-12">
 
-            <div class="bg-negro rounded-xl overflow-hidden shadow-lg transition-all duration-300 max-w-md">
+            <div class="overflow-hidden transition-all duration-300 max-w-md">
                     
                 <div class="relative">
-                    <img src="/portprueba.jpg" alt="Proyecto ejemplo" class="w-full h-48 object-cover">
+                    <img src="/portprueba.jpg" alt="Proyecto ejemplo" class="w-full h-48 rounded-t-xl object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-negro/70 to-transparent"></div>
                 </div>
                     
-                <div class="p-6">
+                <div class="p-6 border-b border-r border-l border-primario bg-negro rounded-b-xl">
                     <h3 class="text-primario font-bold text-2xl mb-2">Camisetas</h3>
 
                     <div class="flex gap-4 items-center justify-between">
@@ -41,14 +41,14 @@
 
             </div>
 
-            <div class="bg-negro rounded-xl overflow-hidden shadow-lg transition-all duration-300 max-w-md">
+            <div class="overflow-hidden transition-all duration-300 max-w-md">
                     
                 <div class="relative">
-                    <img src="/portprueba.jpg" alt="Proyecto ejemplo" class="w-full h-48 object-cover">
+                    <img src="/portprueba.jpg" alt="Proyecto ejemplo" class="w-full  h-48 rounded-t-xl object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-negro/70 to-transparent"></div>
                 </div>
                     
-                <div class="p-6">
+                <div class="p-6 border-b border-r border-l border-primario bg-negro rounded-b-xl">
                     <h3 class="text-primario font-bold text-2xl mb-2">Logofolio</h3>
 
                     <div class="flex gap-4 items-center justify-between">
@@ -56,7 +56,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                             
-                        <a href="/logosPage" class="w-10 h-10 rounded-xl text-negro hover-degrade transition-all duration-300 flex items-center justify-center flex-shrink-0">
+                        <a href="/logosPage" target="_blank" class="w-10 h-10 rounded-xl text-negro hover-degrade transition-all duration-300 flex items-center justify-center flex-shrink-0">
                             <svg class="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                 </svg>
@@ -67,14 +67,14 @@
 
             </div>
 
-            <div class="bg-negro rounded-xl overflow-hidden shadow-lg transition-all duration-300 max-w-md">
+            <div class="overflow-hidden transition-all duration-300 max-w-md">
                     
                 <div class="relative">
-                    <img src="/portprueba.jpg" alt="Proyecto ejemplo" class="w-full h-48 object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-negro/70 to-transparent"></div>
+                    <img src="/portprueba.jpg" alt="Proyecto ejemplo" class="w-full  h-48 rounded-t-xl object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-negro to-transparent"></div>
                 </div>
                     
-                <div class="p-6">
+                <div class="p-6 border-b border-r border-l border-primario bg-negro rounded-b-xl">
                     <h3 class="text-primario font-bold text-2xl mb-2">Social Media</h3>
 
                     <div class="flex gap-4 items-center justify-between">
@@ -82,7 +82,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                             
-                        <a href="/socialMediaPage" class="w-10 h-10 rounded-xl text-negro hover-degrade transition-all duration-300 flex items-center justify-center flex-shrink-0">
+                        <a href="/socialMediaPage" target="_blank" class="w-10 h-10 rounded-xl text-negro hover-degrade transition-all duration-300 flex items-center justify-center flex-shrink-0">
                             <svg class="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
@@ -98,32 +98,3 @@
     </div>
 
 </section>
-
-<style>
-	.hero-pattern {
-		position: relative;
-		overflow: hidden;
-	}
-
-	.hero-pattern::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
-		background-image: url('/pattern2.png');
-		background-repeat: repeat;
-		background-size: auto;
-		background-position: 0 0;
-		pointer-events: none;
-		z-index: 1;
-	}
-	
-	.hero-pattern > * {
-		position: relative;
-		z-index: 2;
-	}
-</style>
