@@ -78,7 +78,7 @@ exports.handler = async (event, context) => {
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
           <!-- Header -->
-          <div style="background: linear-gradient(135deg, #000000 0%, #333333 100%); padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
+          <div style="background: linear-gradient(135deg, #BF9D6D 0%, #D4B88A 100%); padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
             <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">
               📧 Nuevo Mensaje - BJM Portfolio
             </h1>
@@ -87,10 +87,10 @@ exports.handler = async (event, context) => {
           <!-- Content -->
           <div style="padding: 30px; background-color: #ffffff; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
             <!-- Contact Info -->
-            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #000000;">
-              <h2 style="color: #333333; margin: 0 0 15px 0; font-size: 18px;">Información de Contacto</h2>
-              <p style="margin: 8px 0; color: #555555;"><strong>👤 Nombre:</strong> ${nombre}</p>
-              <p style="margin: 8px 0; color: #555555;"><strong>📧 Email:</strong> <a href="mailto:${email}" style="color: #000000; text-decoration: none;">${email}</a></p>
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #BF9D6D;">
+              <h2 style="color: #BF9D6D; margin: 0 0 15px 0; font-size: 18px;">Información de Contacto</h2>
+              <p style="margin: 8px 0; color: #FFFFFF;"><strong>👤 Nombre:</strong> ${nombre}</p>
+              <p style="margin: 8px 0; color: #FFFFFF;"><strong>📧 Email:</strong> <a href="mailto:${email}" style="color: #BF9D6D#BF9D6D; text-decoration: none;">${email}</a></p>
             </div>
             
             <!-- Message -->
@@ -104,21 +104,18 @@ exports.handler = async (event, context) => {
             <!-- CTA Button -->
             <div style="text-align: center; margin: 30px 0;">
               <a href="mailto:${email}?subject=Re: Consulta desde BJM Portfolio" 
-                 style="background: linear-gradient(135deg, #000000 0%, #333333 100%); color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">
+                style="background: linear-gradient(135deg, #BF9D6D 0%, #D4B88A 100%); color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">
                 📩 Responder Email
               </a>
             </div>
           </div>
           
           <!-- Footer -->
-          <div style="text-align: center; margin-top: 20px; padding: 20px;">
+          <div style="text-align: center; margin-top: 10px; padding: 20px;">
             <p style="color: #888888; font-size: 14px; margin: 0;">
               Este mensaje fue enviado desde tu portfolio web<br>
               <strong>BJM Designs</strong>
             </p>
-            <div style="margin-top: 15px;">
-              <span style="color: #cccccc; font-size: 12px;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-            </div>
           </div>
         </div>
       `,
